@@ -12,7 +12,7 @@ body {
 
 .bannerText {
     font-family: 'Orbitron', sans-serif;
-    color: white;
+    color: #FFE1FF;
     text-align: center;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
@@ -32,5 +32,7 @@ body {
 .card {
     max-width: 200px;
     height: 320px;
-    border: solid white 5px;
+    border: solid skyblue 5px;
+    background-color: midnightblue;
+    color: white;
 }
