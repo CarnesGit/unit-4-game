@@ -19,6 +19,12 @@ body {
     -webkit-text-stroke-color: black;
 }
 
+.insignia {
+    max-height: 200px;
+    display: block;
+    margin: auto;
+}
+
 .spacer {
     height: 90px;
 }
