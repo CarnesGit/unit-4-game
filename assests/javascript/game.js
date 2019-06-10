@@ -2,6 +2,8 @@ $(document).ready(function() {
     // Game mechanics variables
     var gameStart = false;
     var attackScore = [];
+    var playerShip = [];
+    var reset = [];
 
     // score variables
     var wins = 0;
@@ -9,35 +11,35 @@ $(document).ready(function() {
 
     // Object for ship Stats
     var ship = {
-        "USS Enterprise": {
+        "ussEnterprise": {
             name: "USS Enterprise",
             health: 120,
             attack: 8,
             enemyAttackBack: 15
         },
-        "Borg Cube": {
+        "borgCube": {
             name: "Borg Cube",
             health: 100,
             attack: 14,
             enemyAttackBack: 5
         },
-        "Defiant": {
-            name: "Defiant",
-            health: 150,
-            attack: 8,
-            enemyAttackBack: 20
-        },
-        "Klingon Bird of Prey": {
+        "klingonBirdOfPrey": {
             name: "Bird of Prey",
             health: 180,
             attack: 7,
             enemyAttackBack: 25
         },
-        "Romulan Warbird": {
+        "romulanWarbird": {
             name: "Warbird",
             health: 180,
             attack: 7,
             enemyAttackBack: 25
+        },
+        "defiant": {
+            name: "Defiant",
+            health: 150,
+            attack: 8,
+            enemyAttackBack: 20
         }
     };
 
@@ -48,7 +50,9 @@ $(document).ready(function() {
 
     //Variable for layout (Change the bootstrap classes to rearange layout, and hide elements if needed. These presets will be stored here.)
     var layOut = {
-        "enemySelectScreen": {},
+        "enemySelectScreen": {
+
+        },
         "combatScreen": {
 
         },
@@ -67,34 +71,34 @@ $(document).ready(function() {
     };
 
     //Function to select a Player Ship and move to the Enemy Selection Screen
-    function $() {
+    function $(gameStart) {
 
     };
 
     //Function to select an Enemy and move to the Combat Screen for each stage of the game
-    function() {
+    function $(layOut) {
 
     };
 
     //Function for Combat
-    function() {
+    function $(layOut) {
 
     };
 
     //Function to adjust score and move to Win or Lose Screen
-    function() {
+    function $(layOut) {
 
     };
 
     //Function for the Win and Lose Game Sceanarios
-    function() {
+    function $(layOut) {
 
     };
 
     //Reset Game Function
-    function() {
+    function $(reset) {
 
-    }
+    };
 
     //Call Functions
 });

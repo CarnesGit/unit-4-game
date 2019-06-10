@@ -12,7 +12,8 @@ body {
 
 .bannerText {
     font-family: 'Orbitron', sans-serif;
-    color: #FFE1FF;
+    color: white;
+    text-align: center;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
 }
@@ -24,20 +25,20 @@ body {
 }
 
 .spacer {
-    height: 90px;
+    height: 20px;
 }
 
 .shipName {
     /* text-align: center; */
-    color: #FFE1FF;
+    color: white;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
 }
 
 .card {
     text-align: center;
-    max-width: 200px;
-    height: 320px;
+    max-width: 220px;
+    height: 380px;
     border: solid skyblue 5px;
     background-color: midnightblue;
     color: white;
