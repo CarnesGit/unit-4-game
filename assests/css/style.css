@@ -6,6 +6,10 @@ body {
     background-size: cover;
 }
 
+.container {
+    min-width: 100%;
+}
+
 #banner {
     max-width: 400px;
 }
