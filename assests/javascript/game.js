@@ -48,132 +48,18 @@ $(document).ready(function() {
 
     ];
 
-    //Variable for layout (Change the bootstrap classes to rearange layout, and hide elements if needed. These presets will be stored here.)
-    var layOut = {
-        "enemySelectScreen": {
-            playerShip: "",
-            enterprise: "",
-            borgCube: "",
-            birdOfPrey: "",
-            warBird: "",
-            defiant: ""
-        },
-        "combatScreen": {
-            playerShip: "",
-            enterprise: "",
-            borgCube: "",
-            birdOfPrey: "",
-            warBird: "",
-            defiant: ""
-        },
-        "winScreen": {
-            playerShip: "",
-            enterprise: "",
-            borgCube: "",
-            birdOfPrey: "",
-            warBird: "",
-            defiant: ""
-        },
-        "loseScreen": {
-            playerShip: "",
-            enterprise: "",
-            borgCube: "",
-            birdOfPrey: "",
-            warBird: "",
-            defiant: ""
-        },
-        "winGameScreen": {
-            playerShip: "",
-            enterprise: "",
-            borgCube: "",
-            birdOfPrey: "",
-            warBird: "",
-            defiant: ""
-        },
-        "loseGameScreen": {
-            playerShip: "",
-            enterprise: "",
-            borgCube: "",
-            birdOfPrey: "",
-            warBird: "",
-            defiant: ""
-        }
-    };
+
 
     //Function to select a Player Ship and move to the Enemy Selection Screen
     $("#enterprise").click(function() {
-        console.log("ive been clicked");
-        $("#enterprise") = (layOut.enemySelectScreen.playerShip);
-        $("#borgCube") = (layOut.enemySelectScreen.borgCube);
-        $("#birdOfPrey") = (layOut.enemySelectScreen.birdOfPrey);
-        $("warbird") = (layOut.enemySelectScreen.warBird);
-        $("defiant") = (layOut.enemySelectScreen.defiant);
+        $('#enterprise').appendTo('#playerArea');
+        $('#borgCube').appendTo('#enemySelection');
+        $('#birdOfPrey').appendTo('#enemySelection');
+        $('#warbird').appendTo('#enemySelection');
+        $('#defiant').appendTo('#enemySelection');
     });
-    $("#borgCube").click(function() {
-        $("#borgCube") = (layOut.enemySelectScreen.playerShip);
-        $("#enterprise") = (layOut.enemySelectScreen.enterprise);
-        $("#birdOfPrey") = (layOut.enemySelectScreen.birdOfPrey);
-        $("warbird") = (layOut.enemySelectScreen.warBird);
-        $("defiant") = (layOut.enemySelectScreen.defiant);
-    });
-    $("#birdOfPrey").click(function() {
-        $("#birdOfPrey") = (layOut.enemySelectScreen.playerShip);
-        $("#enterprise") = (layOut.enemySelectScreen.enterprise);
-        $("#borgCube") = (layOut.enemySelectScreen.borgCube);
-        $("#warbird") = (layOut.enemySelectScreen.warBird);
-        $("#defiant") = (layOut.enemySelectScreen.defiant);
-    });
-    $("#warbird").click(function() {
-        $("#warbird") = (layOut.enemySelectScreen.playerShip);
-        $("#enterprise") = (layOut.enemySelectScreen.enterprise);
-        $("#borgCube") = (layOut.enemySelectScreen.borgCube);
-        $("#birdOfPrey") = (layOut.enemySelectScreen.birdOfPrey);
-        $("defiant") = (layOut.enemySelectScreen.defiant);
-    });
-    $("#defiant").click(function() {
-        $("#defiant") = (layOut.enemySelectScreen.playerShip);
-        $("#enterprise") = (layOut.enemySelectScreen.enterprise);
-        $("#borgCube") = (layOut.enemySelectScreen.borgCube);
-        $("#birdOfPrey") = (layOut.enemySelectScreen.birdOfPrey);
-        $("warbird") = (layOut.enemySelectScreen.warBird);
-    });
+
     //Function to select an Enemy and move to the Combat Screen for each stage of the game
-    $("#enterprise").click(function gameStart() {
-        if (!"#playerShip") {
-            $("#enterprise") = (layOut.enemySelectScreen.playerShip);
-            $("#borgCube") = (layOut.enemySelectScreen.borgCube);
-            $("#birdOfPrey") = (layOut.enemySelectScreen.birdOfPrey);
-            $("warbird") = (layOut.enemySelectScreen.warBird);
-            $("defiant") = (layOut.enemySelectScreen.defiant);
-        }
-    });
-    $("#borgCube").click(function gameStart() {
-        $("#borgCube") = (layOut.enemySelectScreen.playerShip);
-        $("#enterprise") = (layOut.enemySelectScreen.enterprise);
-        $("#birdOfPrey") = (layOut.enemySelectScreen.birdOfPrey);
-        $("warbird") = (layOut.enemySelectScreen.warBird);
-        $("defiant") = (layOut.enemySelectScreen.defiant);
-    });
-    $("#birdOfPrey").click(function gameStart() {
-        $("#birdOfPrey") = (layOut.enemySelectScreen.playerShip);
-        $("#enterprise") = (layOut.enemySelectScreen.enterprise);
-        $("#borgCube") = (layOut.enemySelectScreen.borgCube);
-        $("warbird") = (layOut.enemySelectScreen.warBird);
-        $("defiant") = (layOut.enemySelectScreen.defiant);
-    });
-    $("#warbird").click(function gameStart() {
-        $("#warbird") = (layOut.enemySelectScreen.playerShip);
-        $("#enterprise") = (layOut.enemySelectScreen.enterprise);
-        $("#borgCube") = (layOut.enemySelectScreen.borgCube);
-        $("#birdOfPrey") = (layOut.enemySelectScreen.birdOfPrey);
-        $("defiant") = (layOut.enemySelectScreen.defiant);
-    });
-    $("#defiant").click(function gameStart() {
-        $("#defiant") = (layOut.enemySelectScreen.playerShip);
-        $("#enterprise") = (layOut.enemySelectScreen.enterprise);
-        $("#borgCube") = (layOut.enemySelectScreen.borgCube);
-        $("#birdOfPrey") = (layOut.enemySelectScreen.birdOfPrey);
-        $("warbird") = (layOut.enemySelectScreen.warBird);
-    });
+
     //Call Functions
 });
