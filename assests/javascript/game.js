@@ -51,25 +51,29 @@ $(document).ready(function() {
     $('.card').on('click', function() {
         if (!playerShip) {
             var choice = $(this).attr('value');
-            console.log(ship[choice].name);
             playerShip = ship[choice];
-            console.log(this)
+            $('<p>' + playerShip.name + '</p>').appendTo('#playerStats');
+            $('<p>' + 'Shields - ' + playerShip.health + '</p>').appendTo('#playerStats');
+            $('<p>' + 'Weapons Attack Score - ' + playerShip.attack + '</p>').appendTo('#playerStats');
             player1 = $(this);
             player1.hide();
             $("#banner1").hide();
             $('#chooseEnemy').show();
             $(this).appendTo('#playerArea');
+            console.log(playerShip);
             gameStart === true;
         } else {
             var enemyChoice = $(this).attr('value');
-            console.log(ship[enemyChoice].name);
             currentEnemy = ship[enemyChoice];
-            console.log(currentEnemy);
+            $('<p>' + currentEnemy.name + '</p>').appendTo('#enemyStats');
+            $('<p>' + 'Shields - ' + currentEnemy.health + '</p>').appendTo('#enemyStats');
+            // $('<p>' + 'Weapons Damage - ' + currentEnemy.attack + '</p>').appendTo('#enemyStats');
             player1.show();
             $(this).appendTo('#enemySelection');
             $('#staging').hide();
             $('#chooseEnemy').hide();
             $('#gameBox').show();
+
         }
     });
 

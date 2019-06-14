@@ -62,3 +62,25 @@ body {
     background-color: midnightblue;
     color: white;
 }
+
+#playerStats {
+    background-color: skyblue;
+    color: black;
+    padding-top: 20px;
+    height: 150px;
+    width: 230px;
+    margin: 60px 20px 20px 20px;
+}
+
+#enemyStats {
+    background-color: skyblue;
+    color: black;
+    padding-top: 20px;
+    height: 150px;
+    width: 230px;
+    margin: 60px 20px 20px 20px;
+}
+
+#attackBtn {
+    margin-top: 140px;
+}
