@@ -48,13 +48,14 @@ $(document).ready(function() {
     //Function to select a Player Ship and move to the Enemy Selection Screen
     $('#gameBox').hide();
     $('#chooseEnemy').hide();
+    $('#resetBtn').hide();
     $('.card').on('click', function() {
         if (!playerShip) {
             var choice = $(this).attr('value');
             playerShip = ship[choice];
             $('<p>' + playerShip.name + '</p>').appendTo('#playerStats');
-            $('<p>' + 'Shields - ' + playerShip.health + '</p>').appendTo('#playerStats');
-            $('<p>' + 'Weapons Attack Score - ' + playerShip.attack + '</p>').appendTo('#playerStats');
+            $('<p>' + 'Shields  ' + playerShip.health + '</p>').appendTo('#playerStats');
+            // $('<p>' + 'Weapons Attack Score  ' + playerShip.attack + '</p>').appendTo('#playerStats');
             player1 = $(this);
             player1.hide();
             $("#banner1").hide();
@@ -62,90 +63,34 @@ $(document).ready(function() {
             $(this).appendTo('#playerArea');
             console.log(playerShip);
             gameStart === true;
+            //Function to Select a Enemy and move to Attack Screen
         } else {
             var enemyChoice = $(this).attr('value');
             currentEnemy = ship[enemyChoice];
             $('<p>' + currentEnemy.name + '</p>').appendTo('#enemyStats');
-            $('<p>' + 'Shields - ' + currentEnemy.health + '</p>').appendTo('#enemyStats');
-            // $('<p>' + 'Weapons Damage - ' + currentEnemy.attack + '</p>').appendTo('#enemyStats');
+            $('<p>' + 'Shields  ' + currentEnemy.health + '</p>').appendTo('#enemyStats');
             player1.show();
             $(this).appendTo('#enemySelection');
             $('#staging').hide();
             $('#chooseEnemy').hide();
             $('#gameBox').show();
-
+            $('#resetBtn').show();
+            //Function to Attack
+            $('#attackBtn').on('click', function() {
+                playerShip.health = playerShip.health - currentEnemy.attack;
+                currentEnemy.health = currentEnemy.health - playerShip.attack;
+                $('#playerStats').empty();
+                $('<p>' + playerShip.name + '</p>').appendTo('#playerStats');
+                $('<p>' + 'Shields  ' + playerShip.health + '</p>').appendTo('#playerStats');
+                // $('<p>' + 'Weapons Attack Score  ' + playerShip.attack + '</p>').appendTo('#playerStats');
+                $('#enemyStats').empty();
+                $('<p>' + currentEnemy.name + '</p>').appendTo('#enemyStats');
+                $('<p>' + 'Shields  ' + currentEnemy.health + '</p>').appendTo('#enemyStats');
+            })
         }
+        $('#resetBtn').click(function() {
+            location.reload();
+        });
+
     });
-
-    // $('#chooseEnemy').hide();
-    // $("#enterprise").click(function() {
-    //     $("#banner1").hide();
-    //     $('#enterprise').appendTo('#playerArea');
-    //     playerShip = ship.enterprise;
-    //     console.log(playerShip)
-    //     $('#enterprise').hide();
-    //     $('#chooseEnemy').show();
-    //     $('#borgCube').appendTo('#enemySelection');
-    //     $('#birdOfPrey').appendTo('#enemySelection');
-    //     $('#warbird').appendTo('#enemySelection');
-    //     $('#defiant').appendTo('#enemySelection');
-    //     gameStart = true;
-    //     console.log(gameStart)
-    // });
-    // if (gameStart === false) {
-    //     $("#borgCube").click(function() {
-    //         $("#banner1").hide();
-    //         $('#borgCube').appendTo('#playerArea');
-    //         playerShip = ship.borgCube;
-    //         console.log(playerShip)
-    //         $('#borgCube').hide();
-    //         $('#chooseEnemy').show();
-    //         $('#enterprise').appendTo('#enemySelection');
-    //         $('#birdOfPrey').appendTo('#enemySelection');
-    //         $('#warbird').appendTo('#enemySelection');
-    //         $('#defiant').appendTo('#enemySelection');
-    //         gameStart = true;
-    //     });
-    // }
-
-    // $("#birdOfPrey").click(function() {
-    //     $("#banner1").hide();
-    //     $('#birdOfPrey').appendTo('#playerArea');
-    //     playerShip = ship.klingonBirdOfPrey;
-    //     console.log(playerShip)
-    //     $('#birdOfPrey').hide();
-    //     $('#chooseEnemy').show();
-    //     $('#enterprise').appendTo('#enemySelection');
-    //     $('#borgCube').appendTo('#enemySelection');
-    //     $('#warbird').appendTo('#enemySelection');
-    //     $('#defiant').appendTo('#enemySelection');
-    // });
-    // $("#warbird").click(function() {
-    //     $("#banner1").hide();
-    //     $('#warbird').appendTo('#playerArea');
-    //     playerShip = ship.romulanWarbird;
-    //     console.log(playerShip)
-    //     $('#warbird').hide();
-    //     $('#chooseEnemy').show();
-    //     $('#enterprise').appendTo('#enemySelection');
-    //     $('#borgCube').appendTo('#enemySelection');
-    //     $('#birdOfPrey').appendTo('#enemySelection');
-    //     $('#defiant').appendTo('#enemySelection');
-    // });
-    // $("#defiant").click(function() {
-    //     $("#banner1").hide();
-    //     $('#defiant').appendTo('#playerArea');
-    //     playerShip = ship.defiant;
-    //     console.log(playerShip)
-    //     $('#defiant').hide();
-    //     $('#chooseEnemy').show();
-    //     $('#enterprise').appendTo('#enemySelection');
-    //     $('#borgCube').appendTo('#enemySelection');
-    //     $('#birdOfPrey').appendTo('#enemySelection');
-    //     $('#warbird').appendTo('#enemySelection');
-    // });
-
-    //Function to select an Enemy and move to the Combat Screen for each stage of the game
-
-    //Call Functions
 });
