@@ -2,8 +2,10 @@ $(document).ready(function() {
     // Game mechanics variables
     var gameStart = false;
     var attackScore = [];
-    var playerShip = [];
+    var playerShip;
+    var currentEnemy;
     var reset = [];
+    var player1;
 
     // score variables
     var wins = 0;
@@ -44,20 +46,32 @@ $(document).ready(function() {
     };
 
     //Function to select a Player Ship and move to the Enemy Selection Screen
-
+    $('#gameBox').hide();
     $('#chooseEnemy').hide();
     $('.card').on('click', function() {
-        var choice = $(this).attr('value');
-        console.log(ship[choice].name);
-        playerShip = this;
-        // $(this).hide();
-        $("#banner1").hide();
-        $('#chooseEnemy').show();
-        $(this).appendTo('#playerArea')
-
+        if (!playerShip) {
+            var choice = $(this).attr('value');
+            console.log(ship[choice].name);
+            playerShip = ship[choice];
+            console.log(this)
+            player1 = $(this);
+            player1.hide();
+            $("#banner1").hide();
+            $('#chooseEnemy').show();
+            $(this).appendTo('#playerArea');
+            gameStart === true;
+        } else {
+            var enemyChoice = $(this).attr('value');
+            console.log(ship[enemyChoice].name);
+            currentEnemy = ship[enemyChoice];
+            console.log(currentEnemy);
+            player1.show();
+            $(this).appendTo('#enemySelection');
+            $('#staging').hide();
+            $('#chooseEnemy').hide();
+            $('#gameBox').show();
+        }
     });
-
-
 
     // $('#chooseEnemy').hide();
     // $("#enterprise").click(function() {

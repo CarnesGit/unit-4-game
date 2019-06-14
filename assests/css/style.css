@@ -55,3 +55,10 @@ body {
     background-color: midnightblue;
     color: white;
 }
+
+#gameBox {
+    text-align: center;
+    border: solid skyblue 5px;
+    background-color: midnightblue;
+    color: white;
+}
