@@ -41,7 +41,7 @@ $(document).ready(function() {
     };
 
     //Function to select a Player Ship and move to the Enemy Selection Screen
-    $('#losePop').hide();
+    $('#winLosePop').hide();
     $('#gameBox').hide();
     $('#chooseEnemy').hide();
     $('#resetBtn').hide();
