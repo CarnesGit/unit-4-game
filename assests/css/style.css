@@ -88,3 +88,13 @@ body {
 #resetBtn {
     margin-top: 20px;
 }
+
+#losePop {
+    width: 960px;
+    height: 120px;
+    text-align: center;
+    background-color: skyblue;
+    color: black;
+    border: solid midnightblue 5px;
+    padding-top: 30px;
+}
