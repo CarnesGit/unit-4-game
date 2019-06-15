@@ -80,10 +80,18 @@ $(document).ready(function() {
                 $('#enemyStats').empty();
                 $('<p>' + currentEnemy.name + '</p>').appendTo('#enemyStats');
                 $('<p>' + 'Shields  ' + currentEnemy.health + '</p>').appendTo('#enemyStats');
+                if (playerShip.health <= 0 && playerShip.health < currentEnemy.health) {
+                    $('#gameBox').hide();
+                    $('#playerArea').hide();
+                    $('#enemySelection').hide();
+                    $('#winLosePop').show();
+                } else if (currentEnemy.health <= 0 && playerShip.health > currentEnemy.health) {
+                    $('#winLosePop').empty();
+                    $('<p>' + "You Win!!!! Now Choose a new Enemy!" + '</p>');
+                    $('#winLosePop').show()
+                }
+
             })
-        }
-        if (playerShip.health <= 0) {
-            $('losePop').show();
         }
         $('#resetBtn').click(function() {
             location.reload();
