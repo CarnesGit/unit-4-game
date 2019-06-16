@@ -17,26 +17,31 @@ $(document).ready(function() {
         "enterprise": {
             name: "USS Enterprise",
             health: 160,
+            maxHealth: 160,
             attack: 8
         },
         "borgCube": {
             name: "Borg Cube",
             health: 100,
+            maxHealth: 100,
             attack: 14
         },
         "klingonBirdOfPrey": {
             name: "Klingon Bird of Prey",
             health: 180,
+            maxHealth: 180,
             attack: 7
         },
         "romulanWarbird": {
             name: "Romulan Warbird",
             health: 180,
+            maxHealth: 180,
             attack: 7
         },
         "defiant": {
             name: "USS Defiant",
             health: 160,
+            maxHealth: 160,
             attack: 8
         }
     };
@@ -70,6 +75,7 @@ $(document).ready(function() {
             $('#staging').hide();
             $('#chooseEnemy').hide();
             $('#gameBox').show();
+            $('#playerArea').show();
             $('#resetBtn').show();
             //Function to Attack
             $('#attackBtn').on('click', function() {
@@ -86,6 +92,8 @@ $(document).ready(function() {
                     $('#playerArea').hide();
                     $('#enemySelection').hide();
                     $('#newEnemyBtn').hide();
+                    $('#winLosePop').empty();
+                    $('<p>' + 'You Lose.' + '</p>').appendTo('#winLosePop');
                     $('#winLosePop').show();
                 } else if (currentEnemy.health <= 0 && playerShip.health > currentEnemy.health) {
                     $('#winLosePop').empty();
@@ -100,12 +108,13 @@ $(document).ready(function() {
                         $('#resetBtn').hide();
                         $('#enemySelection').empty();
                         $('#playerStats').empty();
+                        $('<p>' + playerShip.name + '</p>').appendTo('#playerStats');
+                        playerShip.health = playerShip.maxHealth;
                         $('<p>' + 'Shields  ' + (playerShip.health) + '</p>').appendTo('#playerStats');
                         $('#enemyStats').empty();
                         $('#staging').show();
-                        // $('#playerArea').show();
                         $('#enemySelection').show();
-                        playerShip.attack + 1;
+                        playerShip.health + 2;
                     })
                 }
             })
