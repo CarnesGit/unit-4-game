@@ -22,9 +22,9 @@ $(document).ready(function() {
         },
         "borgCube": {
             name: "Borg Cube",
-            health: 100,
-            maxHealth: 100,
-            attack: 14
+            health: 130,
+            maxHealth: 130,
+            attack: 10
         },
         "klingonBirdOfPrey": {
             name: "Klingon Bird of Prey",
@@ -34,8 +34,8 @@ $(document).ready(function() {
         },
         "romulanWarbird": {
             name: "Romulan Warbird",
-            health: 180,
-            maxHealth: 180,
+            health: 170,
+            maxHealth: 170,
             attack: 7
         },
         "defiant": {
@@ -109,12 +109,12 @@ $(document).ready(function() {
                         $('#enemySelection').empty();
                         $('#playerStats').empty();
                         $('<p>' + playerShip.name + '</p>').appendTo('#playerStats');
+                        playerShip.maxHealth = playerShip.maxHealth + 10;
                         playerShip.health = playerShip.maxHealth;
                         $('<p>' + 'Shields  ' + (playerShip.health) + '</p>').appendTo('#playerStats');
                         $('#enemyStats').empty();
                         $('#staging').show();
                         $('#enemySelection').show();
-                        playerShip.health + 2;
                     })
                 }
             })
