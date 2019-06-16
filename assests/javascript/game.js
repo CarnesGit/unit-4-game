@@ -6,6 +6,7 @@ $(document).ready(function() {
     var currentEnemy;
     var reset = [];
     var player1;
+    var bonus;
 
     // score variables
     var wins = 0;
@@ -84,13 +85,29 @@ $(document).ready(function() {
                     $('#gameBox').hide();
                     $('#playerArea').hide();
                     $('#enemySelection').hide();
+                    $('#newEnemyBtn').hide();
                     $('#winLosePop').show();
                 } else if (currentEnemy.health <= 0 && playerShip.health > currentEnemy.health) {
                     $('#winLosePop').empty();
-                    $('<p>' + "You Win!!!! Now Choose a new Enemy!" + '</p>');
+                    $('#playerArea').hide();
+                    $('#enemySelection').hide();
+                    $('#gameBox').hide();
+                    $('<p>' + 'You Win!!!! Now Choose a new Enemy!' + '</p>').appendTo('#winLosePop');
+                    $('<button type="button" class="btn btn-warning" id="newEnemyBtn">Pick New Enemy</button>').appendTo('#winLosePop');
                     $('#winLosePop').show()
+                    $('#newEnemyBtn').on('click', function() {
+                        $('#winLosePop').hide();
+                        $('#resetBtn').hide();
+                        $('#enemySelection').empty();
+                        $('#playerStats').empty();
+                        $('<p>' + 'Shields  ' + (playerShip.health) + '</p>').appendTo('#playerStats');
+                        $('#enemyStats').empty();
+                        $('#staging').show();
+                        // $('#playerArea').show();
+                        $('#enemySelection').show();
+                        playerShip.attack + 1;
+                    })
                 }
-
             })
         }
         $('#resetBtn').click(function() {
@@ -98,4 +115,5 @@ $(document).ready(function() {
         });
 
     });
+
 });
