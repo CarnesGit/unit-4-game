@@ -94,6 +94,17 @@ $(document).ready(function() {
                     $('<p>' + 'You Lose.' + '</p>').appendTo('#winLosePop');
                     $('#winLosePop').show();
                 } else if (currentEnemy.health <= 0 && playerShip.health > currentEnemy.health) {
+                    wins = wins + 1;
+                    if (wins === 4) {
+                        $('#gameBox').hide();
+                        $('#playerArea').hide();
+                        $('#enemySelection').hide();
+                        $('#newEnemyBtn').hide();
+                        $('#winLosePop').empty();
+                        $('<p>' + 'You Have Won The Game!!!!!!' + '</p>').appendTo('#winLosePop');
+                        $('#winLosePop').show();
+                        console.log(wins)
+                    };
                     $('#winLosePop').empty();
                     $('#playerArea').hide();
                     $('#enemySelection').hide();
@@ -101,7 +112,6 @@ $(document).ready(function() {
                     $('<p>' + 'You Win!!!! Now Choose a new Enemy!' + '</p>').appendTo('#winLosePop');
                     $('<button type="button" class="btn btn-warning" id="newEnemyBtn">Pick New Enemy</button>').appendTo('#winLosePop');
                     $('#winLosePop').show()
-                    wins = wins + 1;
                     $('#newEnemyBtn').on('click', function() {
                         $('#winLosePop').hide();
                         $('#resetBtn').hide();
@@ -115,18 +125,10 @@ $(document).ready(function() {
                         $('#staging').show();
                         $('#enemySelection').show();
                     })
-                } else if (wins === 4) {
-                    $('#gameBox').hide();
-                    $('#playerArea').hide();
-                    $('#enemySelection').hide();
-                    $('#newEnemyBtn').hide();
-                    $('#winLosePop').empty();
-                    $('<p>' + 'You Have Won The Game!!!!!!' + '</p>').appendTo('#winLosePop');
-                    $('#winLosePop').show();
-                    console.log(wins)
                 }
             })
         }
+
         $('#resetBtn').click(function() {
             location.reload();
         });
