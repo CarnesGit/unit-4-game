@@ -104,27 +104,28 @@ $(document).ready(function() {
                         $('<p>' + 'You Have Won The Game!!!!!!' + '</p>').appendTo('#winLosePop');
                         $('#winLosePop').show();
                         console.log(wins)
-                    };
-                    $('#winLosePop').empty();
-                    $('#playerArea').hide();
-                    $('#enemySelection').hide();
-                    $('#gameBox').hide();
-                    $('<p>' + 'You Win!!!! Now Choose a new Enemy!' + '</p>').appendTo('#winLosePop');
-                    $('<button type="button" class="btn btn-warning" id="newEnemyBtn">Pick New Enemy</button>').appendTo('#winLosePop');
-                    $('#winLosePop').show()
-                    $('#newEnemyBtn').on('click', function() {
-                        $('#winLosePop').hide();
-                        $('#resetBtn').hide();
-                        $('#enemySelection').empty();
-                        $('#playerStats').empty();
-                        $('<p>' + playerShip.name + '</p>').appendTo('#playerStats');
-                        playerShip.maxHealth = playerShip.maxHealth + 10;
-                        playerShip.health = playerShip.maxHealth;
-                        $('<p>' + 'Shields  ' + (playerShip.health) + '</p>').appendTo('#playerStats');
-                        $('#enemyStats').empty();
-                        $('#staging').show();
-                        $('#enemySelection').show();
-                    })
+                    } else {
+                        $('#winLosePop').empty();
+                        $('#playerArea').hide();
+                        $('#enemySelection').hide();
+                        $('#gameBox').hide();
+                        $('<p>' + 'You Win!!!! Now Choose a new Enemy!' + '</p>').appendTo('#winLosePop');
+                        $('<button type="button" class="btn btn-warning" id="newEnemyBtn">Pick New Enemy</button>').appendTo('#winLosePop');
+                        $('#winLosePop').show()
+                        $('#newEnemyBtn').on('click', function() {
+                            $('#winLosePop').hide();
+                            $('#resetBtn').hide();
+                            $('#enemySelection').empty();
+                            $('#playerStats').empty();
+                            $('<p>' + playerShip.name + '</p>').appendTo('#playerStats');
+                            playerShip.maxHealth = playerShip.maxHealth + 10;
+                            playerShip.health = playerShip.maxHealth;
+                            $('<p>' + 'Shields  ' + (playerShip.health) + '</p>').appendTo('#playerStats');
+                            $('#enemyStats').empty();
+                            $('#staging').show();
+                            $('#enemySelection').show();
+                        })
+                    }
                 }
             })
         }
