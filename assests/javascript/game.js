@@ -94,6 +94,9 @@ $(document).ready(function() {
                     $('<p>' + 'You Lose.' + '</p>').appendTo('#winLosePop');
                     $('#winLosePop').show();
                 } else if (currentEnemy.health <= 0 && playerShip.health > currentEnemy.health) {
+                    playerShip.maxHealth = playerShip.maxHealth + 10;
+                    playerShip.health = playerShip.maxHealth;
+                    currentEnemy.health = 1; //this is done as a temperary fix. Once a new ship is assigned as an enemy it will be overwritten. 
                     wins = wins + 1;
                     if (wins === 4) {
                         $('#gameBox').hide();
@@ -118,8 +121,6 @@ $(document).ready(function() {
                             $('#enemySelection').empty();
                             $('#playerStats').empty();
                             $('<p>' + playerShip.name + '</p>').appendTo('#playerStats');
-                            playerShip.maxHealth = playerShip.maxHealth + 10;
-                            playerShip.health = playerShip.maxHealth;
                             $('<p>' + 'Shields  ' + (playerShip.health) + '</p>').appendTo('#playerStats');
                             $('#enemyStats').empty();
                             $('#staging').show();
