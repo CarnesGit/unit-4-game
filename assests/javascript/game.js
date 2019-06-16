@@ -10,7 +10,6 @@ $(document).ready(function() {
 
     // score variables
     var wins = 0;
-    var losses = 0;
 
     // Object for ship Stats
     var ship = {
@@ -62,7 +61,6 @@ $(document).ready(function() {
             $("#banner1").hide();
             $('#chooseEnemy').show();
             $(this).appendTo('#playerArea');
-            console.log(playerShip);
             gameStart === true;
             //Function to Select a Enemy and move to Attack Screen
         } else {
@@ -103,6 +101,7 @@ $(document).ready(function() {
                     $('<p>' + 'You Win!!!! Now Choose a new Enemy!' + '</p>').appendTo('#winLosePop');
                     $('<button type="button" class="btn btn-warning" id="newEnemyBtn">Pick New Enemy</button>').appendTo('#winLosePop');
                     $('#winLosePop').show()
+                    wins = wins + 1;
                     $('#newEnemyBtn').on('click', function() {
                         $('#winLosePop').hide();
                         $('#resetBtn').hide();
@@ -116,6 +115,15 @@ $(document).ready(function() {
                         $('#staging').show();
                         $('#enemySelection').show();
                     })
+                } else if (wins === 4) {
+                    $('#gameBox').hide();
+                    $('#playerArea').hide();
+                    $('#enemySelection').hide();
+                    $('#newEnemyBtn').hide();
+                    $('#winLosePop').empty();
+                    $('<p>' + 'You Have Won The Game!!!!!!' + '</p>').appendTo('#winLosePop');
+                    $('#winLosePop').show();
+                    console.log(wins)
                 }
             })
         }
